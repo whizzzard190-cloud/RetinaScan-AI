@@ -19,9 +19,9 @@ tf.random.set_seed(SEED)
 np.random.seed(SEED)
 random.seed(SEED)
 
-IMG_SIZE = 224
+IMG_SIZE = 320
 BATCH_SIZE = 4
-EPOCHS = 30
+EPOCHS = 50
 DATA_DIR = "data"
 
 
@@ -84,7 +84,7 @@ def train():
 
     model.compile(
         optimizer=tf.keras.optimizers.Adam(1e-5),
-        loss="categorical_crossentropy",
+        loss=tf.keras.losses.CategoricalCrossentropy(label_smoothing=0.1),
         metrics=["accuracy"]
     )
 

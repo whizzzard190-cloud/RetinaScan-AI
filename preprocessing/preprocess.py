@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
-IMG_SIZE = 224
+IMG_SIZE = 320
 
 def preprocess_image(image_path):
 
